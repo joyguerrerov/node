@@ -1,7 +1,9 @@
 //1- IMPORTAR LIBRERIAS O VARIABLES EXTERNAS
 
-const express = require('express') // esto carga la libreria, recoge/escucha los endpoint y devuelve un resultado, se pone el nombre del archivo ./----
+const express = require('express');// esto carga la libreria, recoge/escucha los endpoint y devuelve un resultado, se pone el nombre del archivo ./----
 
+const { motoRouter } = require('./src/routers/moto.routers');
+const { bikeRouter } = require('./src/routers/bike.routers');
 
 //2- CONFIGURACIÓN DE LA APLICACÓN
 
@@ -12,6 +14,8 @@ const app = express(); // esto es apra que el primer paso, lo ejecute
 //3- ENDPOINTS
 // uso las funciones que esten definidas en esa clase, las ejecuta, sirve para manejar un HTTP
 // los apuntes de esto estan en peticiones.js +++++++++
+app.use('/moto', motoRouter);
+app.use('/bike', bikeRouter);
 
 app.get('/', (request, response) => {
     response.status(200).json({

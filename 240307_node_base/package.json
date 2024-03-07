@@ -1,16 +1,11 @@
 {
-"name": "node_basico",
-"version": "1.0.0",
-"description": "proyecto basico con nodejs",
-"main": "index.js",
-"scripts": {
-"dev": "nodemon index.js",
-"start": "node index.js"
-},
-"author": "Yo",
-"license": "ISC",
-"dependencies": {
-"express": "^4.18.3",
-"nodemon": "^3.1.0"
-}
+  "name": "240307_node_base",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev": "nodemon index.js"
+  },
+  "author": "",
+  "license": "ISC"
 }
