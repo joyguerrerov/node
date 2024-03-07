@@ -2,8 +2,8 @@
 
 const express = require('express');// esto carga la libreria, recoge/escucha los endpoint y devuelve un resultado, se pone el nombre del archivo ./----
 
-const { motoRouter } = require('./src/routers/moto.routers');
-const { bikeRouter } = require('./src/routers/bike.routers');
+const { motoRouter } = require('./src/routes/moto.routes');
+const { bikeRouter } = require('./src/routes/bike.routes');
 
 //2- CONFIGURACIÓN DE LA APLICACÓN
 
