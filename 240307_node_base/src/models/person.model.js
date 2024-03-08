@@ -19,7 +19,7 @@ const personSchema = new mongoose.Schema({// esto es un esquema de la libreria m
         type: Number,
         required: true,
     },
-    siblings: [{ type: String }]// esto es un emeplo de un array, se pueden poner mas datos
+   
 });
 
 const Person = mongoose.model('Person', personSchema); // aqui todas las mayusculas siempre iran asi, en todos los modelos

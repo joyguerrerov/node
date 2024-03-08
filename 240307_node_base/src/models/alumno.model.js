@@ -1,7 +1,8 @@
 const mongoose = require('mongoose');
 
 const alumnoSchema = new mongoose.Schema({// esto es un esquema de la libreria moonguse, que te conecta con mongoDB
-   nombre: {
+  
+    nombre: {
         type: String,
         required: true,
         trim: true // te limpia de espacios que nos sobram

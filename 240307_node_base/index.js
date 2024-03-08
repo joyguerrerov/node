@@ -1,23 +1,32 @@
 //1- IMPORTAR LIBRERIAS O VARIABLES EXTERNAS
 
 const express = require('express');// esto carga la libreria, recoge/escucha los endpoint y devuelve un resultado, se pone el nombre del archivo ./----
-
-const { motoRouter } = require('./src/routes/moto.routes');
-const { bikeRouter } = require('./src/routes/bike.routes');
-const { patinRouter } = require('./src/routes/patin.routes');
+const { connectMongo } = require('./utils/db')
+// const { motoRouter } = require('./src/routes/moto.routes');
+// const { bikeRouter } = require('./src/routes/bike.routes');
+// const { patinRouter } = require('./src/routes/patin.routes');
+const { alumnoRouter } = require('./src/routes/alumno.routes');
+const { aulaRouter } = require('./src/routes/aula.routes');
+const { colegioRouter } = require('./src/routes/colegio.routes');
 
 //2- CONFIGURACIÓN DE LA APLICACÓN
 
-const PORT = 3000; // es una variable que no cambiara nunca, es un puerto, el canal por el que te escucha
-const app = express(); // esto es apra que el primer paso, lo ejecute
+const PORT = 3001; // es una variable que no cambiara nunca, es un puerto, el canal por el que te escucha
+connectMongo();
+const app = express();// esto es apra que el primer paso, lo ejecute
+app.use(express.json());
 
 
 //3- ENDPOINTS
 // uso las funciones que esten definidas en esa clase, las ejecuta, sirve para manejar un HTTP
 // los apuntes de esto estan en peticiones.js +++++++++
-app.use('/moto', motoRouter);
-app.use('/bike', bikeRouter);
-app.use('/patin', patinRouter);
+
+// app.use('/moto', motoRouter);
+// app.use('/bike', bikeRouter);
+// app.use('/patin', patinRouter);
+app.use('/alumno', alumnoRouter);
+app.use('/aula', aulaRouter);
+app.use('/colegio', colegioRouter);
 
 app.get('/', (request, response) => {
     response.status(200).json({

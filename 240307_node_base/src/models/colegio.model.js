@@ -1,22 +1,23 @@
 const mongoose = require('mongoose');
 
 const colegioSchema = new mongoose.Schema({// esto es un esquema de la libreria moonguse 
+    
     nombre: {
         type: String,
-        required: true,
+        required: true, // si no ponemos esto, no se exportara 
         trim: true // te limpia de espacios que nos sobram
     },
-    calle: {
+    direccion: {
         type: String,
         required: true,
-        trim: true // te limpia de espacios que nos sobram
+        trim: true, // te limpia de espacios que nos sobra
+        unique: true,
     },
-    ciudad: {
-        type: Number,
-        required: true,
-        trim: true // te limpia de espacios que nos sobram
-    },
-    siblings: [{ type: String }]// esto es un emeplo de un array, se pueden poner mas datos
+    aulas: [{
+        type: mongoose.Schema.Types.ObjectId, // esto siempre igual solo cambia el ref
+        ref: "Aula"
+    }],
+   
 });
 
 const Colegio = mongoose.model('Colegio', colegioSchema); // aqui todas las mayusculas siempre iran asi, en todos los modelos
