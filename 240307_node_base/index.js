@@ -4,6 +4,7 @@ const express = require('express');// esto carga la libreria, recoge/escucha los
 
 const { motoRouter } = require('./src/routes/moto.routes');
 const { bikeRouter } = require('./src/routes/bike.routes');
+const { patinRouter } = require('./src/routes/patin.routes');
 
 //2- CONFIGURACIÓN DE LA APLICACÓN
 
@@ -16,6 +17,7 @@ const app = express(); // esto es apra que el primer paso, lo ejecute
 // los apuntes de esto estan en peticiones.js +++++++++
 app.use('/moto', motoRouter);
 app.use('/bike', bikeRouter);
+app.use('/patin', patinRouter);
 
 app.get('/', (request, response) => {
     response.status(200).json({
@@ -31,6 +33,19 @@ app.get('/', (request, response) => {
 
 
 //4-MANEJOS DE ERRORES
+
+/* MANEJO DE ERRORES */
+
+app.use((request, response, next) => {
+    let error = new Error();
+    error.status = 404;
+    error.message = 'Not Found';
+    next(error);
+});
+
+app.use((error, request, response, next) => {
+    return response.status(error.status || 500).json(error.message || 'Unexpected error');
+}); // esto nos dira antes de que todo se aruine, nos diga si es un erros 404 o un error 500 
 
 //5- FUNCIÓN DE INICIO 
 
