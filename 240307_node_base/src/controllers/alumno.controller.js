@@ -37,5 +37,15 @@ const createAlumno = async (req, res, next) => { // esto dice que hemos creado l
     }
 }
 
+const getAlumnos = async function buscarAlumnos() {
+    try {
+        const resultados = await Alumno.find({ age: { $gte: 17 } });
+        console.log(resultados);
+    } catch (error) {
+        console.error(error);
+    };
+}
+buscarAlumnos();
+
 
 module.exports = { getAlumno, createAlumno }

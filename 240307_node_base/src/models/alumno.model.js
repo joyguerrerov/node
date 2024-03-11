@@ -19,6 +19,14 @@ const alumnoSchema = new mongoose.Schema({// esto es un esquema de la libreria m
     siblings: [{ type: String }]// esto es un emeplo de un array, se pueden poner mas datos
 });
 
-const Alumno = mongoose.model('Alumno',alumnoSchema); // aqui todas las mayusculas siempre iran asi, en todos los modelos
-
+const Alumno = mongoose.model('Alumno', alumnoSchema); // aqui todas las mayusculas siempre iran asi, en todos los modelos
+async function buscarAlumnos() {
+    try {
+        const resultados = await Alumno.find({ age: { $gte: 17 } });
+        console.log(resultados);
+    } catch (error) {
+        console.error(error);
+    };
+}
+buscarAlumnos();
 module.exports = Alumno; //lo exportamos

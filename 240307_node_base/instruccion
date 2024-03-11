@@ -1,1 +1,34 @@
-Primero modelo, routar,  controlador, al final INDEX siempre controler por que es el que ejecuta
+Primero modelo, routar, controlador, al final INDEX siempre controler por que es el que ejecuta
+
+paara creear un nuevo archivi
+
+- creamos carpeta
+- abrimos terminal
+- escribimos mpn init
+- si pones npm init -y ---> me cra una hoja de ruta
+  - npm run test: te da los datos de tu hoja de ruta
+  - npm i --> ppara instalar las dependencias
+- enter hasta llegar al escritorio ( PS C:\Users\joygu\desarollo\240311_node> )
+- se deberia crear el archivo package-lock.json
+
+- crea index.js y dentro epezaremos
+- crea .gitignore y dentro
+  /node_modules
+  package-lock.json
+
+- para activar la terminal----> npm run dev
+  -db.js--> contiene la el enlace que te deja subir a mongoDB, si dewspues de ? le ponemos un titulo, creara un archivo con ese titulo en la data
+
+  - node i express --> para instalar un archivo node_modules y un packge-lock.json
+  - node mon
+  - npm i --> ppara instalar las dependencias
+  - npm init -y ---> me cra una hoja de ruta
+
+1. Agregar sinopsis a "The Hobbit: An Unexpected Journey" : "A reluctant hobbit, Bilbo
+   Baggins, sets out to the Lonely Mountain with a spirited group of dwarves to reclaim
+   their mountain home - and the gold within it - from the dragon Smaug."
+2. Agregar sinopsis a "The Hobbit: The Desolation of Smaug" : "The dwarves, along with
+   Bilbo Baggins and Gandalf the Grey, continue their quest to reclaim Erebor, their
+   homeland, from Smaug. Bilbo Baggins is in possession of a mysterious and magical
+   ring."
+3. Agregar una actor llamado "Samuel L. Jackson" a la película "Pulp Fiction

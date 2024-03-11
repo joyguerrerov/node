@@ -21,5 +21,14 @@ const colegioSchema = new mongoose.Schema({// esto es un esquema de la libreria 
 });
 
 const Colegio = mongoose.model('Colegio', colegioSchema); // aqui todas las mayusculas siempre iran asi, en todos los modelos
+async function buscarColegios() {
+    try {
+        const resultados = await Colegio.find({ age: { $eq: "IES" } });
+        console.log(resultados);
+    } catch (error) {
+        console.error(error);
+    };
+}
+buscarColegios();
 
 module.exports = Colegio; //lo exportamos
